@@ -28,7 +28,7 @@ _To run:_
 * source_table_schema = schema where source tables are (used for querying existing tables and to make sure we write sp_ColumnBuilderNew to an existing schema)
 * source_core_id_column = identifier column in source database that you will use to link tables back to the new "core" table to ensure relationships are maintained
 * optional: ignore_columns = Comma-separated list of columns you want commented out in every view where they occur, for example: ['StudentNumber','StudentGUID'] 
-5. Run main.py from VSCode
+3. Run main.py from VSCode
    
 _Drawbacks:_ 
 1. Makes copies of existing data, which takes up extra space. 

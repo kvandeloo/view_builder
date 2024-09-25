@@ -21,25 +21,21 @@ and what SQL errors prevent views from executing.
 
 _To run:_ 
 1. Build "dbo.core_tbl" in the database where you want new views and tables to be written. See "core_template.sql" for specifications. 
-2. Enter arguments in main.py
-Argument list: 
-    source_server = SSMS server where your databases are
-    source_db_database = Database where source tables are
-    dbo_database = Database where you want to write new views and tables (Default to source_db_database + '_DBO')
-    source_table_schema = schema where source tables are (used for querying existing tables and to make sure we write sp_ColumnBuilderNew to an existing schema)
-    source_core_id_column = identifier column in source database that you will use to link tables back to the new "core" table to ensure relationships are maintained
-    optional: ignore_columns = Comma-separated list of columns you want commented out in every view where they occur, for example: ['StudentNumber','StudentGUID'] 
-3. Run main.py from VSCode
+2. Enter arguments in main.py. Argument list: 
+* source_server = SSMS server where your databases are
+* source_db_database = Database where source tables are
+* dbo_database = Database where you want to write new views and tables (Default to source_db_database + '_DBO')
+* source_table_schema = schema where source tables are (used for querying existing tables and to make sure we write sp_ColumnBuilderNew to an existing schema)
+* source_core_id_column = identifier column in source database that you will use to link tables back to the new "core" table to ensure relationships are maintained
+* optional: ignore_columns = Comma-separated list of columns you want commented out in every view where they occur, for example: ['StudentNumber','StudentGUID'] 
+5. Run main.py from VSCode
    
 _Drawbacks:_ 
 1. Makes copies of existing data, which takes up extra space. 
-2. Does not capture complex relationships among tables (for example, when the source data tables 
-contain ids that would allow them to be grouped in multiple ways (Hobbies table has a StudentNumber and a ClubNumber, so the tool would include the Hobbies table whether the "core" table comes from "Students" or "Clubs", but the tool cannot work with two "core" tables in a single run), 
-the tool only allows for a single "core" table.)
+2. Does not capture complex relationships among tables (for example, when the source data tables contain ids that would allow them to be grouped in multiple ways (Hobbies table has a StudentNumber and a ClubNumber, so the tool would include the Hobbies table whether the "core" table comes from "Students" or "Clubs", but the tool cannot work with two "core" tables in a single run), the tool only allows for a single "core" table.)
 
 _Extensions:_ 
-1. detail_view_main.py (along with the other detail_ files) can be used to build views that depend on the views just created by the tool. 
-The user must specify (in the mapping window) what view/table in the new database this view depends on, 
+1. detail_view_main.py (along with the other detail_ files) can be used to build views that depend on the views just created by the tool. The user must specify (in the mapping window) what view/table in the new database this view depends on, 
 and the user must specify which column(s) are used to link the source data to new view/table (example: ClassNumber = class_number).
 
 _Future enhancements:_ 

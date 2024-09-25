@@ -9,8 +9,7 @@ and further manipulate the data to show exactly what is needed for a project, th
 Since the tool works with views and copies of existing data, the user does not have to worry about 
 accidentally deleting raw data that will be needed in the future. 
 2. Generate fresh id's according to a standardized naming convention that can be used easily by other scripts. 
-3. Helps with data cleaning (cast date columns as date type, insert placeholder date if needed so migrations do not fail when using Pentaho)
-and meta-data cleaning (output column names will always be in underscores, making them easier to work with in other python scripts).
+3. Help with data cleaning (cast date columns as date type, insert placeholder date if needed so migrations do not fail when using Pentaho) and meta-data cleaning (output column names will always be in underscores, making them easier to work with in other python scripts).
 
 _Expected Results:_ 
 1. New views selected by the user in the mapping window are created in the new database. 

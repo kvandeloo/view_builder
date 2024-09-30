@@ -49,7 +49,7 @@ and include those counts as comments in the source views so users can more easil
 for changing column/table names to underscores to make the code easier to adapt for future needs. 
 
 
-_Developed for_ 
+_Developed for:_ 
 
 Personal project, designed to increase speed on specific data configuration projects
 

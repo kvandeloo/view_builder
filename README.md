@@ -47,3 +47,10 @@ and include those counts as comments in the source views so users can more easil
 4. Switch from using pypyodbc to sqlalchemy for easier connection and additional query/data insertion options. 
 5. Restructure inheritance of View_Builder in subclass Detail_View_Builder and avoid duplicate functions 
 for changing column/table names to underscores to make the code easier to adapt for future needs. 
+
+
+_Developed for_ 
+
+Personal project, designed to increase speed on specific data configuration projects
+
+_Created Fall 2023_
